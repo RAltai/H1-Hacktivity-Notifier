@@ -1,1 +1,2 @@
-0 */3 * * * root python /app/hacktivity_monitor.py >> /var/log/cron.log 2>&1
+SHELL=/bin/bash
+0 */3 * * * /app/run.sh >> /app/.log 2>&1

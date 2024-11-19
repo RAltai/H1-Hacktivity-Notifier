@@ -10,10 +10,16 @@ This project is a Python-based tool that monitors HackerOne's hacktivity feed fo
 By automating the monitoring and notification process, this tool ensures that teams are promptly alerted about new vulnerabilities affecting various programs. This facilitates quicker response times and enhances overall security awareness.
 
 ## Setup:
-0. Add the required environment variable values in `Dockerfile`
+0. `git clone https://github.com/RAltai/H1-Hacktivity-Notifier`
+1. Add the required environment variable values in `Dockerfile`
    - H1_USER_NAME
    - H1_API_TOKEN
    - GOOGLE_CHAT_WEBHOOK_URL
-2. `git clone https://github.com/RAltai/H1-Hacktivity-Notifier`
-3. `docker build -t h1_hacktivity_bot:1.0 src/`
-4. `docker run -itd --name h1_hacktivity_bot h1_hacktivity_bot:1.0`
+2. `docker build -t h1_hacktivity_bot:1.0 src/`
+3. `docker run -itd --name h1_hacktivity_bot h1_hacktivity_bot:1.0`
+
+## Cleanup: 
+0. `docker stop h1_hacktivity_bot`
+1. `docker rm h1_hacktivity_bot`
+2. `docker images rm h1_hacktivity_bot:1.0`
+3. `rm -rf H1-Hacktivity-Notifier`
